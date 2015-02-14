@@ -31,9 +31,8 @@ def rest_encoding(filename):
 
 
 def encode_file(filename):
-    parent_path = os.path.abspath(os.path.join(os.path.realpath(__file__), os.path.pardir, os.path.pardir))
-    geojson_path = os.path.join(parent_path, "geojson_files", filename)
-    geojson_encoded_path = os.path.join(parent_path, "geojson_encoded_files", filename)
+    geojson_path = os.path.join(os.getcwd(), "geojson_files", filename)
+    print geojson_path
     geojson_encoded = process_file(geojson_path)
     return geojson_encoded
 
@@ -61,8 +60,6 @@ def encode_geojson(geojson):
 '''Provides utility functions for encoding and decoding linestrings using the
 Google encoded polyline algorithm.
 '''
-
-
 def _encode_coords(coords):
     '''Encodes a polyline using Google's polyline algorithm
 
@@ -136,6 +133,7 @@ def _encode_geometry(geom):
         return out
     else:
         raise Exception('%s is not a supported geometry type.' % geom_type)
+
 
 # Start Flask server
 if __name__ == '__main__':
