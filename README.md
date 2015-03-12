@@ -1,25 +1,38 @@
 # Leaflet.GeoJSON.Encoded
-Leaflet GeoJSON Encoded
+
+This Leaflet plugin extends the L.GeoJSON layer using Google polyline encoding algorithm, allowing an optimized data transfer.
+
+The algorithm is documented in [Google Maps API Docs](https://developers.google.com/maps/documentation/utilities/polylinealgorithm).
+
+#Encoder (server side)
+
+### Requirements
+- [pip](https://pip.pypa.io/en/latest/installing.html)
+- [flask](http://flask.pocoo.org/)
+- [flask-cors](http://flask-cors.readthedocs.org/en/latest/)
 
 
+### Installation
 
+To install pip package
 
-## Python Service
+```
+$ sudo pip install -r requirements.txt
+```
 
-### Installation (Dependendencies)
+### Usage
 
-It's required to run the service [flask](http://flask.pocoo.org/) and [flask-cors](http://flask-cors.readthedocs.org/en/latest/). To install install run
-
-sudo pip install -r requirements.txt
-
-### Run the service
-
-python geojson_encoder_rest.py
-
-### Usage (Encoding)
+```
+$ python ./encoder/geojson_encoder_rest.py
+```
 
 To encode a GeoJSON (contained in geojson_files)
 
-http://localhost:5678/encode/<filename> (i.e. for example http://localhost:5678/encode/geojson_test.json)
+http://localhost:5678/encode/geojson_test.json
 
 The service returns an encoded GeoJSON
+
+#Dencoder (client side)
+### Requirements
+- [Polyline encoded](https://github.com/jieter/Leaflet.encoded)
+
