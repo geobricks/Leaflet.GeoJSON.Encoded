@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<link rel="stylesheet" href="../node_modules/leaflet/dist/leaflet.css" />
+<style type="text/css">
+.maps {
+	border:2px solid #669;
+	width:500px;
+	height:340px;
+	margin-right: 20px;
+	float:left;
+}
+#ribbon {
+	position: absolute;
+	top: 0;
+	right: 0;
+	border: 0;
+	filter: alpha(opacity=80);
+	-khtml-opacity: .8;
+	-moz-opacity: .8;
+	opacity: .8;		
+}
+</style>
+</head>
+<body>
+<h3><a href="../"><big>◄</big> Leaflet.GeoJSON.Encoded</a></h3>
+<h4>Simple Example</h4>
+<p>
+</p>
+<div style="clear:both">
+	<div class="maps" id="map1"></div>
+	<div class="maps" id="map2"></div>
+</div>
+<script src="../node_modules/leaflet/dist/leaflet.js"></script>
+<script src="../node_modules/polyline-encoded/Polyline.encoded.js"></script>
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../src/leaflet.geojson.encoded.js"></script>
+<script>
+
+	var mapOpts = {
+			layers: L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
+		},
+		map1 = L.map('map1', mapOpts),
+		map2 = L.map('map2', mapOpts);
+
+	$.getJSON('geojson_test.json', function(data) {
+		
+		var geoPlain = L.geoJson(data);
+
+		map1.addLayer(geoPlain).fitBounds( geoPlain.getBounds() );
+	});
+
+	$.getJSON('http://localhost:5678/encode/geojson_test.json', function(data) {
+		
+		var geoEnc = L.geoJson.encoded(data);
+
+		map2.addLayer(geoEnc).fitBounds( geoEnc.getBounds() );
+	});	
+	
+</script>
+<a href="https://github.com/geobricks/Leaflet.GeoJSON.Encoded"><img id="ribbon" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+</body>
+</html>
