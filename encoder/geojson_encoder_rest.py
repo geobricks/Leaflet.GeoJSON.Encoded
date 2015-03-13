@@ -12,7 +12,7 @@ app = Flask(__name__)
 cors = CORS(app, resources={r'/*': {'origins': '*'}})
 
 host='localhost'
-port = 5678
+port = 8000
 
 @app.route('/', methods=['GET'])
 @cross_origin(origins='*')

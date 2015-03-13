@@ -47,14 +47,14 @@
 
 	$.getJSON('geojson_test.json', function(data) {
 		
-		var geoPlain = L.geoJson(data);
+		var geoPlain = new L.GeoJSON(data);
 
 		map1.addLayer(geoPlain).fitBounds( geoPlain.getBounds() );
 	});
 
-	$.getJSON('http://localhost:5678/encode/geojson_test.json', function(data) {
+	$.getJSON('http://localhost:8000/encode/geojson_test.json', function(data) {
 		
-		var geoEnc = L.geoJson.encoded(data);
+		var geoEnc = L.GeoJSON.Encoded(data);
 
 		map2.addLayer(geoEnc).fitBounds( geoEnc.getBounds() );
 	});	

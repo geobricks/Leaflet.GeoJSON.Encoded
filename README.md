@@ -28,7 +28,7 @@ $ python ./encoder/geojson_encoder_rest.py
 
 To encode a GeoJSON (contained in geojson_files)
 
-http://localhost:5678/encode/geojson_test.json
+http://localhost:8000/encode/geojson_test.json
 
 The service returns an encoded GeoJSON
 
