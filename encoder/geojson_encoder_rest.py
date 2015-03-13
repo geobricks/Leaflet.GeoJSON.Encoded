@@ -3,7 +3,6 @@ from flask.ext.cors import CORS
 from flask.ext.cors import cross_origin
 import os
 import json
-# from geojson_encoder import _encode_geometry
 
 # Initialize the Flask app
 app = Flask(__name__)
@@ -31,7 +30,7 @@ def rest_encoding(filename):
 
 
 def encode_file(filename):
-    geojson_path = os.path.join(os.getcwd(), "geojson_files", filename)
+    geojson_path = os.path.join(os.path.dirname(__file__), os.path.pardir,  'examples', filename)
     print geojson_path
     geojson_encoded = process_file(geojson_path)
     return geojson_encoded
