@@ -1,4 +1,4 @@
-from flask import Flask, Response, request, url_for
+from flask import Flask, Response, request
 from flask.ext.cors import CORS
 from flask.ext.cors import cross_origin
 import os
@@ -42,10 +42,6 @@ def process_file(file_path):
         geojson_encoded = encode_geojson(geojson)
         print geojson_encoded
         return geojson_encoded
-
-
-def save_file(file_path, value):
-    return None
 
 
 def encode_geojson(geojson):
