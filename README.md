@@ -12,7 +12,6 @@ The algorithm is documented in [Google Maps API Docs](https://developers.google.
 - [flask-cors](http://flask-cors.readthedocs.org/en/latest/)
 - [watchdog](https://pypi.python.org/pypi/watchdog)
 
-
 ### Installation
 
 To install pip package

@@ -39,20 +39,21 @@
 <script src="../src/leaflet.geojson.encoded.js"></script>
 <script>
 
-	var mapOpts = {
+	var map1 = L.map('map1', {
 			layers: L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
-		},
-		map1 = L.map('map1', mapOpts),
-		map2 = L.map('map2', mapOpts);
+		}),
+		map2 = L.map('map2', {
+			layers: L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
+		});
 
-	$.getJSON('geojson_test.json', function(data) {
+	$.getJSON('italy_simplify.json', function(data) {
 		
 		var geoPlain = new L.GeoJSON(data);
 
 		map1.addLayer(geoPlain).fitBounds( geoPlain.getBounds() );
 	});
 
-	$.getJSON('http://localhost:8000/encode/geojson_test.json', function(data) {
+	$.getJSON('italy_simplify_enc.json', function(data) {
 
 		var geoEnc = new L.GeoJSON.Encoded(data);
 

@@ -1,0 +1,36 @@
+{
+  "type": "FeatureCollection",
+   "features": [
+    { "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [102.0, 0.5]},
+      "properties": {"prop0": "value0"}
+    },
+     {
+      "geometry": {
+        "type": "LineString",
+         "coordinates": "?_{
+          pmR_ibE_ibE~hbE_ibE_ibE_ibE"
+        },
+         "type": "Feature",
+         "properties": {
+          "prop0": "value0",
+           "prop1": 0.0
+        }
+      },
+       {
+        "geometry": {
+          "type": "Polygon",
+           "coordinates": [
+            "?_gjaR?_ibE_ibE??~hbE~hbE?"
+          ]
+        },
+         "type": "Feature",
+         "properties": {
+          "prop0": "value0",
+           "prop1": {
+            "this": "that"
+          }
+        }
+      }
+    ]
+  }
