@@ -10,6 +10,7 @@ The algorithm is documented in [Google Maps API Docs](https://developers.google.
 - [pip](https://pip.pypa.io/en/latest/installing.html)
 - [flask](http://flask.pocoo.org/)
 - [flask-cors](http://flask-cors.readthedocs.org/en/latest/)
+- [watchdog](https://pypi.python.org/pypi/watchdog)
 
 
 ### Installation
