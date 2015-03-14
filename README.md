@@ -32,7 +32,7 @@ http://localhost:8000/encode/geojson_test.json
 
 The service returns an encoded GeoJSON
 
-#Dencoder (client side)
+#Decoder (client side)
 ### Requirements
 - [Polyline encoded](https://github.com/jieter/Leaflet.encoded)
 
