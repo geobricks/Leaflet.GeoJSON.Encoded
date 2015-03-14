@@ -4,7 +4,7 @@ This Leaflet plugin extends the L.GeoJSON layer using Google polyline encoding a
 
 The algorithm is documented in [Google Maps API Docs](https://developers.google.com/maps/documentation/utilities/polylinealgorithm).
 
-#Encoder (server side)
+#Encoder (server)
 
 ### Requirements
 - [pip](https://pip.pypa.io/en/latest/installing.html)
@@ -32,7 +32,7 @@ http://localhost:8000/encode/geojson_test.json
 
 The service returns an encoded GeoJSON
 
-#Decoder (client side)
+#Decoder (client)
 ### Requirements
 - [Polyline encoded](https://github.com/jieter/Leaflet.encoded)
 
