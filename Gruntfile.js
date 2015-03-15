@@ -2,35 +2,11 @@
 
 module.exports = function(grunt) {
 
-grunt.loadNpmTasks('grunt-contrib-clean');
-grunt.loadNpmTasks('grunt-contrib-concat');
-grunt.loadNpmTasks('grunt-contrib-jshint');
-grunt.loadNpmTasks('grunt-contrib-uglify');
-
 grunt.initConfig({
 	pkg: grunt.file.readJSON('package.json'),
-	meta: {
-		banner:
-		'/* \n'+
-		' * Leaflet.GeoJSON.Encoded v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> \n'+
-		' * \n'+
-		' * Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author.name %> \n'+
-		' * <%= pkg.author.email %> \n'+
-		' * <%= pkg.author.url %> \n'+
-		' * \n'+
-		' * Licensed under the <%= pkg.license %> license. \n'+
-		' * \n'+
-		' * Demo: \n'+
-		' * <%= pkg.homepage %> \n'+
-		' * \n'+
-		' * Source: \n'+
-		' * <%= pkg.repository.url %> \n'+
-		' * \n'+
-		' */\n'
-	},
 	clean: {
 		dist: {
-			src: ['dist/*']
+			src: ['index.html']
 		}
 	},
 	jshint: {
@@ -41,28 +17,14 @@ grunt.initConfig({
 			},
 			"-W099": true,	//ignora tabs e space warning
 			"-W033": true,
-			"-W044": true,	//ignore regexp
-			"-W061": true	//ignore eval in getAjax()
+			"-W044": true	//ignore regexp
 		},
-		files: ['src/*.js']
+		files: ['src/leaflet.geojson.encoded.js']
 	},
-	concat: {
-		options: {
-			banner: '<%= meta.banner %>'
-		},
-		dist: {
+	markdown: {
+		readme: {
 			files: {
-				'dist/.src.js': ['src/.js']
-			}
-		}
-	},
-	uglify: {
-		options: {
-			banner: '<%= meta.banner %>'
-		},
-		dist: {
-			files: {
-				'dist/.min.js': ['dist/.src.js']
+				'index.html': ['README.md']
 			}
 		}
 	}
@@ -70,9 +32,11 @@ grunt.initConfig({
 
 grunt.registerTask('default', [
 	'clean',
-	'concat',
 	'jshint',
-	'uglify'
+	'markdown'
 ]);
 
+grunt.loadNpmTasks('grunt-contrib-clean');
+grunt.loadNpmTasks('grunt-contrib-jshint');
+grunt.loadNpmTasks('grunt-markdown');
 };

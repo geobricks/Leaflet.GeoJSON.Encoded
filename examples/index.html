@@ -32,12 +32,12 @@ body {
 	<h4>Simple Example</h4>
 	<p>Comparison of the GeoJSON loading time</p>
 	<div class="row">
-		<div id="map-label1" class="col-md-5">Original: <em>italy_simplify.json</em> - 186Kbytes</div>
-		<div id="map-label2" class="col-md-5 col-md-offset-1">Encoded: <em>italy_simplify.json</em> - 26Kbytes</div>
+		<div id="map-label1" class="col-xs-5 text-nowrap">Original: <em>italy.json</em> - 186Kbytes<br></div>
+		<div id="map-label2" class="col-xs-5 col-xs-offset-1 text-nowrap">Encoded: <em>italy_encoded.json</em> - 26Kbytes<br></div>
 	</div>
 	<div class="row">
-		<div class="col-md-5" id="map1"></div>
-		<div class="col-md-5 col-md-offset-1" id="map2"></div>
+		<div class="col-xs-5" id="map1"></div>
+		<div class="col-xs-5 col-xs-offset-1" id="map2"></div>
 	</div>
 </div>
 
@@ -55,9 +55,9 @@ body {
 		});
 
 	var time1 = new Date().getTime();
-	$.getJSON('italy_simplify.json', function(data) {
+	$.getJSON('italy.json', function(data) {
 		
-		$('#map-label1').append(' - <b>Load time: ' + (new Date().getTime()-time1) + 'ms</b>');
+		$('#map-label1').append('<b>Load time: ' + (new Date().getTime()-time1) + 'ms</b>');
 		
 		var geoPlain = new L.GeoJSON(data);
 
@@ -65,9 +65,9 @@ body {
 	});
 
 	var time2 = new Date().getTime();
-	$.getJSON('italy_simplify_enc.json', function(data) {
+	$.getJSON('italy_encoded.json', function(data) {
 
-		$('#map-label2').append(' - <b>Load time: ' + (new Date().getTime()-time2) + 'ms</b>');
+		$('#map-label2').append('<b>Load time: ' + (new Date().getTime()-time2) + 'ms</b>');
 
 		var geoEncoded = new L.GeoJSON.Encoded(data);
 

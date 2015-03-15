@@ -1,8 +1,10 @@
 # Leaflet.GeoJSON.Encoded
 
 This Leaflet plugin extends the L.GeoJSON layer using Google polyline encoding algorithm, allowing an optimized data transfer.
-
 The algorithm is documented in [Google Maps API Docs](https://developers.google.com/maps/documentation/utilities/polylinealgorithm).
+
+##Demo
+[examples page](examples/)
 
 #Encoder (server)
 
@@ -28,7 +30,7 @@ $ python ./encoder/geojson_encoder_rest.py
 
 To encode a GeoJSON (contained in geojson_files)
 
-http://localhost:8000/encode/geojson_test.json
+http://localhost:8000/encode/italy_simplify.json
 
 The service returns an encoded GeoJSON
 

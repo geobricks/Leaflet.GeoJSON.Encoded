@@ -1,0 +1,143 @@
+<!DOCTYPE  html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <title>doc</title>
+    <style>
+      /*github.com style (c) Vasily Polovnyov <vast@whiteants.net>*/
+      pre code {
+        display: block; padding: 0.5em;
+        color: #333;
+        background: #f8f8ff
+      }
+      pre .comment,
+      pre .template_comment,
+      pre .diff .header,
+      pre .javadoc {
+        color: #998;
+        font-style: italic
+      }
+      pre .keyword,
+      pre .css .rule .keyword,
+      pre .winutils,
+      pre .javascript .title,
+      pre .nginx .title,
+      pre .subst,
+      pre .request,
+      pre .status {
+        color: #333;
+        font-weight: bold
+      }
+      pre .number,
+      pre .hexcolor,
+      pre .ruby .constant {
+        color: #099;
+      }
+      pre .string,
+      pre .tag .value,
+      pre .phpdoc,
+      pre .tex .formula {
+        color: #d14
+      }
+      pre .title,
+      pre .id {
+        color: #900;
+        font-weight: bold
+      }
+      pre .javascript .title,
+      pre .lisp .title,
+      pre .clojure .title,
+      pre .subst {
+        font-weight: normal
+      }
+      pre .class .title,
+      pre .haskell .type,
+      pre .vhdl .literal,
+      pre .tex .command {
+        color: #458;
+        font-weight: bold
+      }
+      pre .tag,
+      pre .tag .title,
+      pre .rules .property,
+      pre .django .tag .keyword {
+        color: #000080;
+        font-weight: normal
+      }
+      pre .attribute,
+      pre .variable,
+      pre .lisp .body {
+        color: #008080
+      }
+      pre .regexp {
+        color: #009926
+      }
+      pre .class {
+        color: #458;
+        font-weight: bold
+      }
+      pre .symbol,
+      pre .ruby .symbol .string,
+      pre .lisp .keyword,
+      pre .tex .special,
+      pre .prompt {
+        color: #990073
+      }
+      pre .built_in,
+      pre .lisp .title,
+      pre .clojure .built_in {
+        color: #0086b3
+      }
+      pre .preprocessor,
+      pre .pi,
+      pre .doctype,
+      pre .shebang,
+      pre .cdata {
+        color: #999;
+        font-weight: bold
+      }
+      pre .deletion {
+        background: #fdd
+      }
+      pre .addition {
+        background: #dfd
+      }
+      pre .diff .change {
+        background: #0086b3
+      }
+      pre .chunk {
+        color: #aaa
+      }
+    </style>
+  </head>
+  <body>  
+    <h1 id="leaflet-geojson-encoded">Leaflet.GeoJSON.Encoded</h1>
+<p>This Leaflet plugin extends the L.GeoJSON layer using Google polyline encoding algorithm, allowing an optimized data transfer.
+The algorithm is documented in <a href="https://developers.google.com/maps/documentation/utilities/polylinealgorithm">Google Maps API Docs</a>.</p>
+<h2 id="demo">Demo</h2>
+<p><a href="examples/">examples page</a></p>
+<h1 id="encoder-server-">Encoder (server)</h1>
+<h3 id="requirements">Requirements</h3>
+<ul>
+<li><a href="https://pip.pypa.io/en/latest/installing.html">pip</a></li>
+<li><a href="http://flask.pocoo.org/">flask</a></li>
+<li><a href="http://flask-cors.readthedocs.org/en/latest/">flask-cors</a></li>
+<li><a href="https://pypi.python.org/pypi/watchdog">watchdog</a></li>
+</ul>
+<h3 id="installation">Installation</h3>
+<p>To install pip package</p>
+<pre><code>$ sudo pip install -r requirements.txt</code></pre>
+<h3 id="usage">Usage</h3>
+<pre><code>$ python ./encoder/geojson_encoder_rest.py</code></pre>
+<p>To encode a GeoJSON (contained in geojson_files)</p>
+<p><a href="http://localhost:8000/encode/italy_simplify.json">http://localhost:8000/encode/italy_simplify.json</a></p>
+<p>The service returns an encoded GeoJSON</p>
+<h1 id="decoder-client-">Decoder (client)</h1>
+<h3 id="requirements">Requirements</h3>
+<ul>
+<li><a href="https://github.com/jieter/Leaflet.encoded">Polyline encoded</a></li>
+</ul>
+
+  </body>
+</html>

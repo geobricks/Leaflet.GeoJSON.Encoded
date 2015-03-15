@@ -4,7 +4,7 @@ L.GeoJSON.Encoded = L.GeoJSON.extend({
 
 	_decodeFeature: function(feature) {
 
-		var resp;
+		var geom,coords,resp;
 
 		function _build_linestrings(geom) {
 		    var paths = [];
@@ -20,36 +20,36 @@ L.GeoJSON.Encoded = L.GeoJSON.extend({
 		    return polygons;
 		}
 
-        var geom = feature["geometry"]["coordinates"];
+        geom = feature.geometry.coordinates;
 
-        switch(feature["geometry"]["type"]) {
-            case "Point":
+        switch(feature.geometry.type) {
+            case 'Point':
                 
                 resp = L.marker([geom[1], geom[0]]);
 
                 break;
-            case "LineString":
-                var coords = L.Util.isArray(geom[0]) ? L.GeoJSON.coordsToLatLngs(geom, 0) : L.PolylineUtil.decode(geom);
+            case 'LineString':
+                coords = L.Util.isArray(geom[0]) ? L.GeoJSON.coordsToLatLngs(geom, 0) : L.PolylineUtil.decode(geom);
                 
                 resp = L.polyline(coords);
 
                 break;
-            case "MultiLineString":
-                var coords = L.Util.isArray(geom[0][0]) ? L.GeoJSON.coordsToLatLngs(geom, 1) : _build_linestrings(geom);
+            case 'MultiLineString':
+                coords = L.Util.isArray(geom[0][0]) ? L.GeoJSON.coordsToLatLngs(geom, 1) : _build_linestrings(geom);
                 
                 resp = L.multiPolyline(coords);
 
                 break;
-            case "Polygon":
-                var rings = L.Util.isArray(geom[0][0]) ? L.GeoJSON.coordsToLatLngs(geom, 1) : _build_linestrings(geom);
+            case 'Polygon':
+                coords = L.Util.isArray(geom[0][0]) ? L.GeoJSON.coordsToLatLngs(geom, 1) : _build_linestrings(geom);
                 
-                resp = L.polygon(rings);
+                resp = L.polygon(coords);
 
                 break;
-            case "MultiPolygon":
-                var polygons = L.Util.isArray(geom[0][0]) ? L.GeoJSON.coordsToLatLngs(geom, 2) : _build_polygons(geom);
+            case 'MultiPolygon':
+                coords = L.Util.isArray(geom[0][0]) ? L.GeoJSON.coordsToLatLngs(geom, 2) : _build_polygons(geom);
 
-                resp = L.multiPolygon(polygons);
+                resp = L.multiPolygon(coords);
 
                 break;
         }
