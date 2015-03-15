@@ -59,7 +59,7 @@ body {
 		
 		$('#map-label1').append('<b>Load time: ' + (new Date().getTime()-time1) + 'ms</b>');
 		
-		var geoPlain = new L.GeoJSON(data);
+		var geoPlain = new L.GeoJSON(data, {style: { weight:2,opacity:1}});
 
 		map1.addLayer(geoPlain).fitBounds( geoPlain.getBounds() );
 	});
@@ -69,7 +69,7 @@ body {
 
 		$('#map-label2').append('<b>Load time: ' + (new Date().getTime()-time2) + 'ms</b>');
 
-		var geoEncoded = new L.GeoJSON.Encoded(data);
+		var geoEncoded = new L.GeoJSON.Encoded(data, {style: { weight:2,opacity:1,color:'#00aa00'}});
 
 		map2.addLayer(geoEncoded).fitBounds( geoEncoded.getBounds() );
 	});	
