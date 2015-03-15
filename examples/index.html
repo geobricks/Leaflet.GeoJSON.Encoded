@@ -3,14 +3,15 @@
 <head> 
 <title></title> 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
 <link rel="stylesheet" href="../node_modules/leaflet/dist/leaflet.css" />
 <style type="text/css">
-.maps {
-	border:2px solid #669;
-	width:500px;
-	height:340px;
-	margin-right: 20px;
-	float:left;
+body {
+	background: #eee
+}
+.leaflet-container {
+	height:400px;
+	border: 1px solid #ccc
 }
 #ribbon {
 	position: absolute;
@@ -25,14 +26,21 @@
 </style>
 </head>
 <body>
-<h3><a href="../"><big>◄</big> Leaflet.GeoJSON.Encoded</a></h3>
-<h4>Simple Example</h4>
-<p>
-</p>
-<div style="clear:both">
-	<div class="maps" id="map1"></div>
-	<div class="maps" id="map2"></div>
+
+<div class="container">
+	<h3><a href="../">Leaflet.GeoJSON.Encoded</a></h3>
+	<h4>Simple Example</h4>
+	<p>Comparison of the GeoJSON loading time</p>
+	<div class="row">
+		<div id="map-label1" class="col-md-5">Original: <em>italy_simplify.json</em> - 186Kbytes</div>
+		<div id="map-label2" class="col-md-5 col-md-offset-1">Encoded: <em>italy_simplify.json</em> - 26Kbytes</div>
+	</div>
+	<div class="row">
+		<div class="col-md-5" id="map1"></div>
+		<div class="col-md-5 col-md-offset-1" id="map2"></div>
+	</div>
 </div>
+
 <script src="../node_modules/jquery/dist/jquery.min.js"></script>
 <script src="../node_modules/leaflet/dist/leaflet-src.js"></script>
 <script src="../node_modules/polyline-encoded/Polyline.encoded.js"></script>
@@ -46,18 +54,24 @@
 			layers: L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
 		});
 
+	var time1 = new Date().getTime();
 	$.getJSON('italy_simplify.json', function(data) {
+		
+		$('#map-label1').append(' - <b>Load time: ' + (new Date().getTime()-time1) + 'ms</b>');
 		
 		var geoPlain = new L.GeoJSON(data);
 
 		map1.addLayer(geoPlain).fitBounds( geoPlain.getBounds() );
 	});
 
+	var time2 = new Date().getTime();
 	$.getJSON('italy_simplify_enc.json', function(data) {
 
-		var geoEnc = new L.GeoJSON.Encoded(data);
+		$('#map-label2').append(' - <b>Load time: ' + (new Date().getTime()-time2) + 'ms</b>');
 
-		map2.addLayer(geoEnc).fitBounds( geoEnc.getBounds() );
+		var geoEncoded = new L.GeoJSON.Encoded(data);
+
+		map2.addLayer(geoEncoded).fitBounds( geoEncoded.getBounds() );
 	});	
 	
 </script>
