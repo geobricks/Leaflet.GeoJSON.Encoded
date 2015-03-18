@@ -29,7 +29,7 @@ L.GeoJSON.Encoded = L.GeoJSON.extend({
 
                 break;
             case 'LineString':
-                coords = L.Util.isArray(geom[0]) ? L.GeoJSON.coordsToLatLngs(geom, 0) : L.PolylineUtil.decode(geom);
+                coords = L.Util.isArray(geom[0]) ? L.GeoJSON.coordsToLatLngs(geom, 0) : _build_linestrings(geom[0])[0];
                 
                 resp = L.polyline(coords);
 
@@ -69,7 +69,7 @@ L.GeoJSON.Encoded = L.GeoJSON.extend({
 				feature = this._decodeFeature(features[i]);
 				//feature = features[i];
 
-				console.log(features[i], feature);
+				//console.log(features[i], feature);
 
 				if (feature.geometries || feature.geometry || feature.features || feature.coordinates) {
 					this.addData(feature);
