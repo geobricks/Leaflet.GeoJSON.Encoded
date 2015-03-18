@@ -4,7 +4,8 @@ This Leaflet plugin extends the L.GeoJSON layer using Google polyline encoding a
 The algorithm is documented in [Google Maps API Docs](https://developers.google.com/maps/documentation/utilities/polylinealgorithm).
 
 ##Demo
-[examples page](examples/)
+- [example italy](examples/italy.html)
+- [example roads](examples/roads.html)
 
 #Encoder (server)
 
@@ -14,17 +15,13 @@ The algorithm is documented in [Google Maps API Docs](https://developers.google.
 - [flask-cors](http://flask-cors.readthedocs.org/en/latest/)
 - [watchdog](https://pypi.python.org/pypi/watchdog)
 
-### Installation
+### Setup
 
 To install pip package
 
 ```
+$ cd encoder
 $ sudo pip install -r requirements.txt
-```
-
-### Usage
-
-```
 $ python ./encoder/geojson_encoder_rest.py
 ```
 

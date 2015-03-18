@@ -116,7 +116,10 @@
 <p>This Leaflet plugin extends the L.GeoJSON layer using Google polyline encoding algorithm, allowing an optimized data transfer.
 The algorithm is documented in <a href="https://developers.google.com/maps/documentation/utilities/polylinealgorithm">Google Maps API Docs</a>.</p>
 <h2 id="demo">Demo</h2>
-<p><a href="examples/">examples page</a></p>
+<ul>
+<li><a href="examples/italy.html">example italy</a></li>
+<li><a href="examples/roads.html">example roads</a></li>
+</ul>
 <h1 id="encoder-server-">Encoder (server)</h1>
 <h3 id="requirements">Requirements</h3>
 <ul>
@@ -125,11 +128,11 @@ The algorithm is documented in <a href="https://developers.google.com/maps/docum
 <li><a href="http://flask-cors.readthedocs.org/en/latest/">flask-cors</a></li>
 <li><a href="https://pypi.python.org/pypi/watchdog">watchdog</a></li>
 </ul>
-<h3 id="installation">Installation</h3>
+<h3 id="setup">Setup</h3>
 <p>To install pip package</p>
-<pre><code>$ sudo pip install -r requirements.txt</code></pre>
-<h3 id="usage">Usage</h3>
-<pre><code>$ python ./encoder/geojson_encoder_rest.py</code></pre>
+<pre><code>$ cd encoder
+$ sudo pip install -r requirements.txt
+$ python ./encoder/geojson_encoder_rest.py</code></pre>
 <p>To encode a GeoJSON (contained in geojson_files)</p>
 <p><a href="http://localhost:8000/encode/italy_simplify.json">http://localhost:8000/encode/italy_simplify.json</a></p>
 <p>The service returns an encoded GeoJSON</p>
