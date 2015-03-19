@@ -21,6 +21,13 @@ grunt.initConfig({
 		},
 		files: ['src/leaflet.geojson.encoded.js']
 	},
+	uglify: {
+		dist: {
+			files: {
+				'dist/leaflet.geojson.encoded.min.js': ['src/leaflet.geojson.encoded.js']
+			}
+		}
+	},	
 	markdown: {
 		readme: {
 			files: {
@@ -33,10 +40,12 @@ grunt.initConfig({
 grunt.registerTask('default', [
 	'clean',
 	'jshint',
+	'uglify',
 	'markdown'
 ]);
 
 grunt.loadNpmTasks('grunt-contrib-clean');
 grunt.loadNpmTasks('grunt-contrib-jshint');
+grunt.loadNpmTasks('grunt-contrib-uglify');
 grunt.loadNpmTasks('grunt-markdown');
 };

@@ -43,7 +43,6 @@ body {
 
 <script src="../node_modules/jquery/dist/jquery.min.js"></script>
 <script src="../node_modules/leaflet/dist/leaflet-src.js"></script>
-<script src="../node_modules/polyline-encoded/Polyline.encoded.js"></script>
 <script src="../src/leaflet.geojson.encoded.js"></script>
 <script>
 
@@ -65,7 +64,10 @@ body {
 
 		$('#map-label2').append('<b>Load time: ' + (new Date().getTime()-time2) + 'ms</b>');
 
-		var geoEncoded = new L.GeoJSON.Encoded(data, {style: { weight:2,opacity:1,color:'#a00'}});
+		var geoEncoded = new L.GeoJSON.Encoded(data, {
+			style: { weight:2,opacity:1,color:'#a00'},
+			
+		});
 
 		L.map('map2', {
 			layers: L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')

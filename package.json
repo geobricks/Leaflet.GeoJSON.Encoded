@@ -1,6 +1,6 @@
 {
   "name": "Leaflet.GeoJSON.Encoded",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "",
   "repository": {
     "type": "git",
@@ -11,20 +11,21 @@
   "keywords": [
     "gis",
     "map",
+    "geojson",
     "leaflet"
   ],
   "main": "dist/leaflet.geojson.encoded.min.js",
   "dependencies": {
-    "leaflet": "*",
-    "polyline-encoded": "*"
+    "leaflet": "*"
   },
   "devDependencies": {
-  	"jquery": "*",
-  	"bootstrap": "",
+    "bootstrap": "",
     "grunt": "~0.4.2",
     "grunt-cli": "~0.1.11",
     "grunt-contrib-clean": "^0.5.0",
     "grunt-contrib-jshint": "^0.10.0",
-    "grunt-markdown": "^0.6.1"
+    "grunt-contrib-uglify": "^0.8.0",
+    "grunt-markdown": "^0.6.1",
+    "jquery": "*"
   }
 }
