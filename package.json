@@ -26,6 +26,7 @@
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-uglify": "^0.8.0",
     "grunt-markdown": "^0.6.1",
-    "jquery": "*"
+    "jquery": "*",
+    "grunt-contrib-concat": "~0.5.1"
   }
 }

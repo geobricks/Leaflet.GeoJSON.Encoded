@@ -24,7 +24,8 @@ grunt.initConfig({
 	uglify: {
 		dist: {
 			files: {
-				'dist/leaflet.geojson.encoded.min.js': ['src/leaflet.geojson.encoded.js']
+				'dist/leaflet.geojson.encoded.min.js': ['src/leaflet.geojson.encoded.js'],
+				'dist/leaflet.geojson.encoded.encoder.min.js': ['src/leaflet.geojson.encoded.encoder.js']
 			}
 		}
 	},	
