@@ -30,8 +30,3 @@ To encode a GeoJSON (contained in geojson_files)
 http://localhost:8000/encode/italy_simplify.json
 
 The service returns an encoded GeoJSON
-
-#Decoder (client)
-### Requirements
-- [Polyline encoded](https://github.com/jieter/Leaflet.encoded)
-
