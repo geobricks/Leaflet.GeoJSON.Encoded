@@ -1,32 +1,40 @@
 {
-  "name": "Leaflet.GeoJSON.Encoded",
-  "version": "0.1.2",
-  "description": "",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:geobricks/Leaflet.GeoJSON.Encoded.git"
-  },
-  "license": "GPL2",
-  "homepage": "http://geobricks.org/",
-  "keywords": [
-    "gis",
-    "map",
-    "geojson",
-    "leaflet"
-  ],
-  "main": "dist/leaflet.geojson.encoded.min.js",
-  "dependencies": {
-    "leaflet": "*"
-  },
-  "devDependencies": {
-    "bootstrap": "",
-    "grunt": "~0.4.2",
-    "grunt-cli": "~0.1.11",
-    "grunt-contrib-clean": "^0.5.0",
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-contrib-uglify": "^0.8.0",
-    "grunt-markdown": "^0.6.1",
-    "jquery": "*",
-    "grunt-contrib-concat": "~0.5.1"
-  }
+   "name": "Leaflet GeoJSON Encoded",
+   "label": {
+      "en": "Leaflet GeoJSON Encoded"
+   },
+   "language": "JavaScript",
+   "version": "0.1.2",
+   "description": "Leaflet GeoJSON Encoded.",
+   "repository": {
+      "type": "git",
+      "url": "git@github.com:geobricks/Leaflet.GeoJSON.Encoded.git"
+   },
+   "license": "GPL2",
+   "homepage": "http://geobricks.org/",
+   "keywords": [
+      "gis",
+      "map",
+      "geojson",
+      "leaflet"
+   ],
+   "main": "dist/leaflet.geojson.encoded.min.js",
+   "dependencies": {
+      "leaflet": "*"
+   },
+   "repository": {
+      "type": "git",
+      "url": "https://github.com/geobricks/Leaflet.GeoJSON.Encoded"
+   },
+   "devDependencies": {
+      "bootstrap": "",
+      "grunt": "~0.4.2",
+      "grunt-cli": "~0.1.11",
+      "grunt-contrib-clean": "^0.5.0",
+      "grunt-contrib-jshint": "^0.10.0",
+      "grunt-contrib-uglify": "^0.8.0",
+      "grunt-markdown": "^0.6.1",
+      "jquery": "*",
+      "grunt-contrib-concat": "~0.5.1"
+   }
 }
