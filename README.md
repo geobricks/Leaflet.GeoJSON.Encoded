@@ -4,8 +4,8 @@ This Leaflet plugin extends the L.GeoJSON layer using Google polyline encoding a
 The algorithm is documented in [Google Maps API Docs](https://developers.google.com/maps/documentation/utilities/polylinealgorithm).
 
 ##Demo
-- [example italy](examples/italy.html)
-- [example roads](examples/roads.html)
+- [example italy](http://labs.easyblog.it/maps/leaflet-geojson-encoded/examples/italy.html)
+- [example roads](http://labs.easyblog.it/maps/leaflet-geojson-encoded/examples/roads.html)
 
 #Encoder (server)
 
